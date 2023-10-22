@@ -1,33 +1,34 @@
 // import { useEffect } from 'react'
-import { useAppDispatch, useAppSelector } from '../../hooks/redux'
-import { fetchUsers } from '../../store/reducers/ActionCreatorUser'
 import { Button } from 'antd'
+import { useAppDispatch, useAppSelector } from '../../hooks/redux'
+import { fetchUsersThunk } from '../../store/reducers/ActionCreatorUserThunk'
 
-import styles from './Users.module.scss'
+import styles from './UsersThunk.module.scss'
 
-const Users = () => {
+
+const UsersThunk = () => {
     const dispatch = useAppDispatch()
-    const { error, isLoading, users } = useAppSelector(state => state.userReducer)
+    const { error, isLoading, users } = useAppSelector(state => state.userThunkReducer)
 
     // useEffect(() => {
-    //     dispatch(fetchUsers())
+    //     dispatch(fetchUsersThunk())
     // }, [dispatch])
 
     const dataRequest = () => {
-        dispatch(fetchUsers())
+        dispatch(fetchUsersThunk())
     }
 
     return (
-        <div className={styles.Users}>
+        <div className={styles.UsersThunk}>
             <h2>Запрос пользователей</h2>
-            <p className={styles.subtitle}>обращение к серверу через ActionCreator</p>
+            <p>обращение к серверу через createAsyncThunk</p>
+            <p className={styles.subtitle}>ActionCreator находится в слайсе</p>
 
             <Button type="primary" onClick={dataRequest}>Запросить Users с jsonplaceholder</Button>
 
             <div>
                 {isLoading && <h1>Идет загрузка...</h1>}
                 {error && <h1>{error}</h1>}
-                {/* {JSON.stringify(users, null, 2)} */}
                 <div className={styles.users}>
                     {users && users.map(user =>
                         <div className={styles.userCard}>
@@ -41,4 +42,4 @@ const Users = () => {
     )
 }
 
-export default Users
+export default UsersThunk;

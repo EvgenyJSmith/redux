@@ -13,6 +13,7 @@ const Counter = () => {
     return (
         <div className={styles.Counter}>
             <h2>Знаменитый счетчик)</h2>
+            <p>сохранение значения в сторе redux</p>
 
             <span className={styles.number}>{count}</span>
 

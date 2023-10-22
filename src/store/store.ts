@@ -1,11 +1,13 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import counerReducer from './reducers/CounterSlice';
-import userReducer from './reducers/UserSlice'
+import userReducer from './reducers/UserSlice';
+import userThunkReducer from './reducers/UserSliceThunk'
 
 
 const rootReducer = combineReducers({
     counerReducer,
     userReducer,
+    userThunkReducer,
 })
 
 export const setupStore = () => {
