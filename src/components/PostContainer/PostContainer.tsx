@@ -32,7 +32,7 @@ const PostContainer = () => {
         <div className={styles.PostContainer}>
             <h2>Запрос, добавление, редактирование, удаление постов</h2>
             <p>обращение к серверу через RTK query {'>>'} createApi</p>
-            <p className={styles.subtitle}>необходимо запустит json сервер на 5000 порту</p>
+            <p className={styles.subtitle}>необходимо запустит json сервер на 5000 порту (json-server --watch db.json --port 5000)</p>
 
 
             {isLoading && <h2>Идет загрузка..</h2>}
