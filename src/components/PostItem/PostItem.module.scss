@@ -1,0 +1,34 @@
+.PostItem{
+    // border: 1px solid blue;
+    border-radius: 5px;
+
+    max-width: 500px;
+    width: 100%;
+
+    background-color: white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+
+    padding: 15px;
+
+
+    display: flex;
+    flex-direction: column;
+
+    cursor: pointer;
+
+    transition: all 0.2s;
+
+    &:hover{
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.45);
+    }
+}
+
+.content{
+    margin-bottom: 15px;
+}
+
+.button{
+    margin-bottom: 0px;
+    width: fit-content;
+    align-self: flex-end;
+}
